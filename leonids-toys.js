@@ -1,42 +1,58 @@
 const toys = [
     {
-        id: 1,
         name: "Fallout 4 Pipboy",
         price: 140,
         instock: true,
-        weight: 10
+        weight: 10,
+        id: 1
     },
     {
-        id: 2,
         name: "Fluffy",
         price: 10,
         instock: true,
-        weight: 1.75
+        weight: 1.75,
+        id: 2
     },
     {
-        id: 3,
         name: "Wii",
         price: 200,
         instock: false,
-        weight: 15
+        weight: 15,
+        id: 3
     }
     ]
 
+    const addToyToInventory = (toyObject) => {
+        const lastIndex = toys.length - 1
+        const currentLastToy = toys[lastIndex]
+        const maxId = currentLastToy.id
+        const idForNewToy = maxId + 1
+    
+        toyObject.id = idForNewToy
+        toys.push(toyObject)
+    }
+    
 const rubberDuck = {
-    id: 4,
     name: "Jeff",
     price: 5,
     instock: true,
     weight: 0.25
-};
+}
 const actionFigure = {
-    id: 5,
     name: "John Cena",
     price: 19.99,
     instock: true,
     weight: 2
-};
+}
 
+addToyToInventory(rubberDuck)
+addToyToInventory(actionFigure)
+
+for (const toy of toys) {
+    console.log(`The ${toy.name} costs ${toy.price} dollars.`)
+}
+
+console.log(toys)
 
 //const toyToFind = 2
 
