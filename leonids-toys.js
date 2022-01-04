@@ -20,8 +20,9 @@ const toys = [
         weight: 15,
         id: 3
     }
-    ]
+    ];
 
+    //Adds new id in numerical order after last toy hardcoded in, then pushes the new toy (object) into the toys array
     const addToyToInventory = (toyObject) => {
         const lastIndex = toys.length - 1
         const currentLastToy = toys[lastIndex]
@@ -49,10 +50,11 @@ addToyToInventory(rubberDuck)
 addToyToInventory(actionFigure)
 
 for (const toy of toys) {
+    toy.price = toy.price * 1.05
     console.log(`The ${toy.name} costs ${toy.price} dollars.`)
 }
 
-console.log(toys)
+
 
 //const toyToFind = 2
 
